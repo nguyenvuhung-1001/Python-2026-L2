@@ -8,43 +8,43 @@ def input_number_of_students():
 def input_students():
     a = input_number_of_students()
     for i in range(a):
-        print(f"\n--- Student {i+1} ---")
+        print(f"Student {i+1}")
         student_id = input("Id: ")
         name = input("Name: ")
         DOB = input("DOB: ")
         students.append({'Id': student_id, 'name': name, 'DOB': DOB})
 
 def input_number_of_courses():
-    return int(input("\nEnter total number of courses: "))
+    return int(input("Enter total number of courses: "))
 
 def input_courses():
     a = input_number_of_courses()
     for i in range(a):
-        print(f"\n--- Course {i+1} ---")
+        print(f"Course {i+1}")
         course_id = input("Id: ")
         name = input("Course name: ")
         course.append({'Id': course_id, 'name': name})
 
 def input_marks():
-    course_id = input("\nEnter Course ID to input marks: ")
+    course_id = input("Enter Course ID to input marks: ")
     marks[course_id] = {}
     for n in students:
         score = float(input(f"Enter mark for {n['name']} (ID: {n['Id']}): "))
         marks[course_id][n['Id']] = score
 
 def list_courses():
-    print("\n--- List of courses ---")
+    print("List of courses")
     for c in course:
         print(f"ID: {c['Id']} | Name: {c['name']}")
 
 def list_students():
-    print("\n--- List of students ---")
+    print("List of students")
     for n in students:
         print(f"ID: {n['Id']} | Name: {n['name']} | DOB: {n['DOB']}")
 
 def Marks():
-    course_id = input("\nEnter Course ID to view marks: ")
-    print(f"\n--- Marks for course {course_id} ---")
+    course_id = input("Enter Course ID to view marks: ")
+    print(f"Marks for course {course_id}")
     for n in students:
         score = marks[course_id].get(n['Id'], "N/A")
         print(f"Student: {n['name']} | Mark: {score}")
